@@ -1,0 +1,102 @@
+﻿{
+  "CreateCharge": {
+    "route": "/charge",
+    "method": "post"
+  },
+  "DetailCharge": {
+    "route": "/charge/:id",
+    "method": "get"
+  },
+  "UpdateChargeMetadata": {
+    "route": "/charge/:id/metadata",
+    "method": "put"
+  },
+  "UpdateBillet": {
+    "route": "/charge/:id/billet",
+    "method": "put"
+  },
+  "PayCharge": {
+    "route": "/charge/:id/pay",
+    "method": "post"
+  },
+  "CancelCharge": {
+    "route": "/charge/:id/cancel",
+    "method": "put"
+  },
+  "CreateCarnet": {
+    "route": "/carnet",
+    "method": "post"
+  },
+  "DetailCarnet": {
+    "route": "/carnet/:id",
+    "method": "get"
+  },
+  "UpdateParcel": {
+    "route": "/carnet/:id/parcel/:parcel",
+    "method": "put"
+  },
+  "UpdateCarnetMetadata": {
+    "route": "/carnet/:id/metadata",
+    "method": "put"
+  },
+  "GetNotification": {
+    "route": "/notification/:token",
+    "method": "get"
+  },
+  "GetPlans": {
+    "route": "/plans",
+    "method": "get"
+  },
+  "CreatePlan": {
+    "route": "/plan",
+    "method": "post"
+  },
+  "DeletePlan": {
+    "route": "/plan/:id",
+    "method": "del"
+  },
+  "CreateSubscription": {
+    "route": "/plan/:id/subscription",
+    "method": "post"
+  },
+  "DetailSubscription": {
+    "route": "/subscription/:id",
+    "method": "get"
+  },
+  "PaySubscription": {
+    "route": "/subscription/:id/pay",
+    "method": "post"
+  },
+  "CancelSubscription": {
+    "route": "/subscription/:id/cancel",
+    "method": "put"
+  },
+  "UpdateSubscriptionMetadata": {
+    "route": "/subscription/:id/metadata",
+    "method": "put"
+  },
+  "GetInstallments": {
+    "route": "/installments",
+    "method": "get"
+  },
+  "ResendBillet": {
+    "route": "/charge/:id/billet/resend",
+    "method": "post"
+  },
+  "CreateChargeHistory": {
+    "route": "/charge/:id/history",
+    "method": "post"
+  },
+  "ResendCarnet": {
+    "route": "/carnet/:id/resend",
+    "method": "post"
+  },
+  "ResendParcel": {
+    "route": "/carnet/:id/parcel/:parcel/resend",
+    "method": "post"
+  },
+  "CreateCarnetHistory": {
+    "route": "/carnet/:id/history",
+    "method": "post"
+  }
+}

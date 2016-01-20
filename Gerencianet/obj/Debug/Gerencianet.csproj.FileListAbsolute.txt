@@ -1,0 +1,13 @@
+c:\users\danniel\documents\visual studio 2015\Projects\Gerencianet\Gerencianet\bin\Debug\Gerencianet.dll
+c:\users\danniel\documents\visual studio 2015\Projects\Gerencianet\Gerencianet\bin\Debug\Gerencianet.pdb
+c:\users\danniel\documents\visual studio 2015\Projects\Gerencianet\Gerencianet\bin\Debug\Newtonsoft.Json.dll
+c:\users\danniel\documents\visual studio 2015\Projects\Gerencianet\Gerencianet\bin\Debug\Newtonsoft.Json.xml
+c:\users\danniel\documents\visual studio 2015\Projects\Gerencianet\Gerencianet\obj\Debug\Gerencianet.csprojResolveAssemblyReference.cache
+c:\users\danniel\documents\visual studio 2015\Projects\Gerencianet\Gerencianet\obj\Debug\Gerencianet.dll
+c:\users\danniel\documents\visual studio 2015\Projects\Gerencianet\Gerencianet\obj\Debug\Gerencianet.pdb
+c:\users\danniel\documents\visual studio 2015\Projects\Gerencianet\Gerencianet\obj\Debug\Gerencianet.Properties.Resources.resources
+c:\users\danniel\documents\visual studio 2015\Projects\Gerencianet\Gerencianet\obj\Debug\Gerencianet.csproj.GenerateResource.Cache
+c:\users\danniel\documents\visual studio 2015\Projects\Gerencianet\Gerencianet\bin\Debug\System.Net.Http.dll
+c:\users\danniel\documents\visual studio 2015\Projects\Gerencianet\Gerencianet\bin\Debug\System.Net.Http.WebRequest.dll
+c:\users\danniel\documents\visual studio 2015\Projects\Gerencianet\Gerencianet\bin\Debug\System.Net.Http.xml
+c:\users\danniel\documents\visual studio 2015\Projects\Gerencianet\Gerencianet\bin\Debug\System.Net.Http.WebRequest.xml
