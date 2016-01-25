@@ -62,10 +62,6 @@ namespace Gerencianet.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///  &quot;Authorize&quot;: {
-        ///    &quot;route&quot;: &quot;/authorize&quot;,
-        ///    &quot;method&quot;: &quot;post&quot;
-        ///  },
         ///  &quot;CreateCharge&quot;: {
         ///    &quot;route&quot;: &quot;/charge&quot;,
         ///    &quot;method&quot;: &quot;post&quot;
@@ -87,7 +83,10 @@ namespace Gerencianet.Properties {
         ///    &quot;method&quot;: &quot;post&quot;
         ///  },
         ///  &quot;CancelCharge&quot;: {
-        ///    &quot;r [rest of string was truncated]&quot;;.
+        ///    &quot;route&quot;: &quot;/charge/:id/cancel&quot;,
+        ///    &quot;method&quot;: &quot;put&quot;
+        ///  },
+        ///  &quot;CreateCarnet&quot;: [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string endpoints {
             get {

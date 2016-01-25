@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerencianet", "Gerencianet\Gerencianet.csproj", "{E4D26948-353C-4A54-BC5B-B70413EE4206}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerencianet.Tests", "Gerencianet.Tests\Gerencianet.Tests.csproj", "{63ABEA86-B730-44AC-BFC8-BB02C1DE3711}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E4D26948-353C-4A54-BC5B-B70413EE4206}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4D26948-353C-4A54-BC5B-B70413EE4206}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4D26948-353C-4A54-BC5B-B70413EE4206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63ABEA86-B730-44AC-BFC8-BB02C1DE3711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63ABEA86-B730-44AC-BFC8-BB02C1DE3711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63ABEA86-B730-44AC-BFC8-BB02C1DE3711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63ABEA86-B730-44AC-BFC8-BB02C1DE3711}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

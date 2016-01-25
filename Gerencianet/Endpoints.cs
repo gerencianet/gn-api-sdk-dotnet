@@ -1,60 +1,42 @@
 ﻿using Gerencianet.Properties;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Dynamic;
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace Gerencianet
 {
     public class Endpoints : DynamicObject
     {
-        private const string Version = "0.0.1";
         private const string ApiBaseURL = "https://api.gerencianet.com.br/v1";
         private const string ApiBaseSandboxURL = "https://sandbox.gerencianet.com.br/v1";
+        private const string Version = "0.0.1";
 
         private JObject endpoints;
         private string clientId;
         private string clientSecret;
-        private bool sandbox;
-        private string baseUrl;
         private string token;
+        private HttpHelper httpHelper;
 
         public Endpoints(string clientId, string clientSecret, bool sandbox)
         {
             this.clientId = clientId;
             this.clientSecret = clientSecret;
-            this.sandbox = sandbox;
             string jsonString = Resources.ResourceManager.GetString("endpoints");
             this.endpoints = JObject.Parse(jsonString);
-            this.baseUrl = this.sandbox ? ApiBaseSandboxURL : ApiBaseURL;
-        }
-
-        public override bool TryGetMember(GetMemberBinder binder, out object result)
-        {
-            result = null;
-            return true;
-        }
-
-        public override bool TrySetMember(SetMemberBinder binder, object value)
-        {
-            return true;
+            this.httpHelper = new HttpHelper();
+            this.httpHelper.BaseUrl = sandbox ? Endpoints.ApiBaseSandboxURL : Endpoints.ApiBaseURL;
         }
 
         public override bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result)
-        {
+        { 
             JObject endpoint = null;
-            try
-            {
-                endpoint = (JObject)this.endpoints[binder.Name];
-            }
-            catch (NullReferenceException e)
-            {
-                throw new GnException(0, "invalid_endpoint", string.Format("Método '%s' inexistente", binder.Name));
-            }
+            endpoint = (JObject)this.endpoints[binder.Name];
+            
+            if (endpoint == null)
+                throw new GnException(0, "invalid_endpoint", string.Format("Método '{0}' inexistente", binder.Name));
 
             var route = (string)endpoint["route"];
             var method = (string)endpoint["method"];
@@ -97,32 +79,32 @@ namespace Gerencianet
             {
                 grant_type = "client_credentials"
             };
-            WebRequest request = this.GetWebRequest("/authorize", "post", null, body);
-            string credentials = string.Format("%s:%s", this.clientId, this.clientSecret);
+            WebRequest request = this.httpHelper.GetWebRequest("/authorize", "post", null);
+            string credentials = string.Format("{0}:{1}", this.clientId, this.clientSecret);
             string encodedAuth = Convert.ToBase64String(Encoding.GetEncoding("UTF-8").GetBytes(credentials));
-            request.Headers.Add("Authorization", string.Format("Basic %s", encodedAuth));
+            request.Headers.Add("Authorization", string.Format("Basic {0}", encodedAuth));
+            request.Headers.Add("api-sdk", string.Format("dotnet-{0}", Endpoints.Version));
 
             try
             {
-                dynamic response = SendRequest(request);
-                this.token = (string) response.access_token;
+                dynamic response = this.httpHelper.SendRequest(request, body);
+                this.token = response.access_token;
             }
-            catch (WebException e)
+            catch (WebException)
             {
-                StreamReader reader = new StreamReader(e.Response.GetResponseStream());
                 throw new GnException(401, "authorization_error", "Could not authenticate. Please make sure you are using correct credentials and if you are using then in the correct environment.");
             }
         }
 
         private object RequestEndpoint(string endpoint, string method, object query, object body)
         {
-            //System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            WebRequest request = this.GetWebRequest(endpoint, method, query, body);
-            request.Headers.Add("Authorization", string.Format("Bearer %s", this.token));
+            WebRequest request = this.httpHelper.GetWebRequest(endpoint, method, query);
+            request.Headers.Add("Authorization", string.Format("Bearer {0}", this.token));
+            request.Headers.Add("api-sdk", string.Format("dotnet-{0}", Version));
 
             try
             {
-                return SendRequest(request);
+                return httpHelper.SendRequest(request, body);
             }
             catch (WebException e)
             {
@@ -136,48 +118,6 @@ namespace Gerencianet
                     throw new GnException(500, "internal_server_error", "Ocorreu um erro no servidor");
                 }
             }
-        }
-
-        private WebRequest GetWebRequest(string endpoint, string method, object query, object body)
-        {
-            if (query != null)
-            {
-                MatchCollection matchCollection = Regex.Matches(endpoint, ":([a-zA-Z0-9]+)");
-                for (int i = 0; i < matchCollection.Count; i++)
-                {
-                    string resource = matchCollection[i].Groups[1].Value;
-                    try
-                    {
-                        var value = (string)query.GetType().GetProperty(resource).GetValue(query, null).ToString();
-                        endpoint = Regex.Replace(endpoint, string.Format(":%s", resource), value);
-                    }
-                    catch (NullReferenceException e)
-                    {}
-                }
-            }
-
-            //System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            WebRequest request = HttpWebRequest.Create(string.Format("%s%s", this.baseUrl, endpoint));
-            request.Method = method;
-            request.ContentType = "application/json";
-            request.Headers.Add("api-sdk", string.Format("dotnet-%s", Version));
-
-            if (!method.Equals("get") && body != null)
-            {
-                Stream postStream = request.GetRequestStream();
-                var data = Encoding.UTF8.GetBytes(JObject.FromObject(body).ToString());
-                postStream.Write(data, 0, data.Length);
-            }
-
-            return request;
-        }
-
-        private object SendRequest(WebRequest request)
-        {
-            WebResponse response = request.GetResponse();
-            StreamReader reader = new StreamReader(response.GetResponseStream());
-            object def = new {};
-            return JsonConvert.DeserializeAnonymousType(reader.ReadToEnd(), def);
         }
         
     }

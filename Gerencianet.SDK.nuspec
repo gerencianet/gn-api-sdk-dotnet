@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Gerencianet.SDK</id>
+    <version>0.0.1</version>
+    <authors>Cecília Devêza, Danniel Hugo, Francisco Thiene, Talita Campos, Thomaz Feitoza</authors>
+    <projectUrl>https://github.com/gerencianet/gn-api-sdk-dotnet</projectUrl>
+    <iconUrl>https://avatars2.githubusercontent.com/u/7284118</iconUrl>
+    <licenseUrl>https://github.com/gerencianet/gn-api-sdk-dotnet/blob/master/LICENSE</licenseUrl>
+    <description>.NET sdk for Gerencianet API.</description>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="5.0.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Gerencianet\bin\Release\Gerencianet.SDK.dll" target="lib\net45" />
+  </files>
+</package>
