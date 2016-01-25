@@ -30,7 +30,7 @@ namespace Gerencianet
             }
         }
 
-        public static GnException Build(String json)
+        public static GnException Build(string json)
         {
             object def = new { };
             dynamic jsonObject = JsonConvert.DeserializeAnonymousType(json, def);
@@ -41,6 +41,5 @@ namespace Gerencianet
 
             return new GnException(code, error, description);
         }
-
     }
 }
