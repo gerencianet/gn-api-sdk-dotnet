@@ -30,10 +30,7 @@ namespace Gerencianet.Tests
                 someVar = "value",
                 otherVar = "foobar"
             };
-            object body = new
-            {
-                address = "4636 Route 70 Vienna, VA 22180"
-            };
+
             WebRequest request = this.httpHelper.GetWebRequest(endpoint, method, query);
 
             Assert.IsTrue(request.RequestUri.Equals("https://myapi.example.com/user/124/address/298?someVar=value&otherVar=foobar"), "RequestUri should contain all resources and/or query string");
@@ -109,5 +106,8 @@ namespace Gerencianet.Tests
             responseStream.Seek(0, SeekOrigin.Begin);
             return responseStream;
         }
+
+        public override void Close() {}
+
     }
 }

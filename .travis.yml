@@ -3,5 +3,5 @@ solution: Gerencianet.sln
 install:
   - nuget restore Gerencianet.sln || true
 script:
-  - xbuild /p:Configuration=Release Gerencianet.sln
+  - xbuild /tv:4.0 /p:Configuration=Release Gerencianet.sln
   - mono ./packages/NUnit.Console.3.0.1/tools/nunit3-console.exe ./Gerencianet.Tests/bin/Release/Gerencianet.Tests.dll
