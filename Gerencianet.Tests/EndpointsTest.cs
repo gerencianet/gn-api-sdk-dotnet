@@ -41,22 +41,7 @@ namespace Gerencianet.Tests
         [Test]
         public void AuthenticateTest()
         {
-            try {
-                this.gerencianet.createCharge();
-            }
-            catch (GnException e)
-            {
-                Assert.IsTrue(e.ErrorType.Equals("authorization_error"), "");
-            }
-
-            try
-            {
-                this.gerencianet.createCharge();
-            }
-            catch (GnException e)
-            {
-                Assert.IsTrue(e.ErrorType.Equals("authorization_error"), "");
-            }
+            
         }
 
     }
