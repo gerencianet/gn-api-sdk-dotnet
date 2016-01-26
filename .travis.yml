@@ -18,7 +18,7 @@ install:
 script:
   - xbuild /tv:4.0 /p:Configuration=Release Gerencianet.sln
   - export LD_LIBRARY_PATH=/usr/local/lib
-  - mono --debug --profile=monocov:outfile=monocovCoverage.cov,+Gerencianet ./packages/NUnit.Console.3.0.1/tools/nunit3-console.exe --process=Single ./src/Gerencianet.Tests/bin/Release/Gerencianet.Tests.dll
+  - mono --debug --profile=monocov:outfile=monocovCoverage.cov,+Gerencianet ./packages/NUnit.Console.3.0.1/tools/nunit3-console.exe --process=Single ./Gerencianet.Tests/bin/Release/Gerencianet.Tests.dll
   - monocov --export-xml=monocovCoverage monocovCoverage.cov
   - cat monocovCoverage.cov
   - ls monocovCoverage
