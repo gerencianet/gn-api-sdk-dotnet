@@ -71,7 +71,7 @@ namespace Gerencianet
             return request;
         }
 
-        public object SendRequest(WebRequest request, object body)
+        public dynamic SendRequest(WebRequest request, object body)
         {
             if (!request.Method.Equals("GET") && body != null)
             {

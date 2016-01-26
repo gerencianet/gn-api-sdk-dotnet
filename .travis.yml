@@ -1,7 +1,7 @@
 language: csharp
 solution: Gerencianet.sln
 install:
-  - nuget restore Gerencianet.sln
+  - nuget restore Gerencianet.sln || true
 script:
   - xbuild /p:Configuration=Release Gerencianet.sln
   - mono ./packages/NUnit.Console.3.0.1/tools/nunit3-console.exe ./Gerencianet.Tests/bin/Release/Gerencianet.Tests.dll
