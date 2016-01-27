@@ -1,4 +1,4 @@
-﻿using Gerencianet.Properties;
+﻿using Gerencianet.SDK.Properties;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Dynamic;
@@ -6,12 +6,12 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-namespace Gerencianet
+namespace Gerencianet.SDK
 {
     public class Endpoints : DynamicObject
     {
         private const string ApiBaseURL = "https://api.gerencianet.com.br/v1";
-        private const string ApiBaseSandboxURL = "https://sandbox.gerencianet.com.br/v1";
+        private const string ApiBaseSandboxURL = "https://api.thomaz.jedi.interno.labgerencianet.com.br";
         private const string Version = "0.0.1";
 
         private JObject endpoints;
@@ -28,6 +28,7 @@ namespace Gerencianet
             this.endpoints = JObject.Parse(jsonString);
             this.httpHelper = new HttpHelper();
             this.httpHelper.BaseUrl = sandbox ? Endpoints.ApiBaseSandboxURL : Endpoints.ApiBaseURL;
+            this.token = null;
         }
 
         public override bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result)
@@ -90,9 +91,9 @@ namespace Gerencianet
                 dynamic response = this.httpHelper.SendRequest(request, body);
                 this.token = response.access_token;
             }
-            catch (WebException)
+            catch (WebException e)
             {
-                throw new GnException(401, "authorization_error", "Could not authenticate. Please make sure you are using correct credentials and if you are using then in the correct environment.");
+                throw GnException.Build("", 401);
             }
         }
 
@@ -110,12 +111,13 @@ namespace Gerencianet
             {
                 if (e.Response != null && (e.Response is HttpWebResponse))
                 {
+                    var statusCode = (int)((HttpWebResponse)e.Response).StatusCode;
                     StreamReader reader = new StreamReader(e.Response.GetResponseStream());
-                    throw GnException.Build(reader.ReadToEnd());
+                    throw GnException.Build(reader.ReadToEnd(), statusCode);
                 }
                 else
                 {
-                    throw new GnException(500, "internal_server_error", "Ocorreu um erro no servidor");
+                    throw GnException.Build("", 500);
                 }
             }
         }

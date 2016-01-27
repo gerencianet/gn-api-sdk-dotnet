@@ -2,36 +2,6 @@ language: csharp
 solution: Gerencianet.sln
 install:
   - nuget restore Gerencianet.sln || true
-  - sudo apt-get install gtk-sharp2
-  - curl -sS https://api.nuget.org/packages/mono.cecil.0.9.5.4.nupkg > /tmp/mono.cecil.0.9.5.4.nupkg.zip
-  - unzip /tmp/mono.cecil.0.9.5.4.nupkg.zip -d /tmp/cecil
-  - cp /tmp/cecil/lib/net40/Mono.Cecil.dll .
-  - cp /tmp/cecil/lib/net40/Mono.Cecil.dll /tmp/cecil/
-  - git clone --depth=50 git://github.com/csMACnz/monocov.git ../../csMACnz/monocov
-  - PROJECT_PATH="$(pwd)";
-  - cd ../../csMACnz/monocov
-  - cp /tmp/cecil/Mono.Cecil.dll .
-  - ./configure
-  - make
-  - sudo make install
-  - cd $PROJECT_PATH
 script:
   - xbuild /tv:4.0 /p:Configuration=Release Gerencianet.sln
-  - export LD_LIBRARY_PATH=/usr/local/lib
-  - mono --debug --profile=monocov:outfile=monocovCoverage.cov,+Gerencianet ./packages/NUnit.Console.3.0.1/tools/nunit3-console.exe --process=Single ./Gerencianet.Tests/bin/Release/Gerencianet.Tests.dll
-  - monocov --export-xml=monocovCoverage monocovCoverage.cov
-  - cat monocovCoverage.cov
-  - find monocovCoverage/ -type f -regex ".*Gerencianet.Tests.*" -delete
-  - find monocovCoverage/ -type f -regex ".*Gerencianet.Properties.*" -delete
-  - ls monocovCoverage
-  - REPO_COMMIT_AUTHOR=$(git show -s --pretty=format:"%cn")
-  - REPO_COMMIT_AUTHOR_EMAIL=$(git show -s --pretty=format:"%ce")
-  - REPO_COMMIT_MESSAGE=$(git show -s --pretty=format:"%s")
-  - echo $TRAVIS_COMMIT
-  - echo $TRAVIS_BRANCH
-  - echo $REPO_COMMIT_AUTHOR
-  - echo $REPO_COMMIT_AUTHOR_EMAIL
-  - echo $REPO_COMMIT_MESSAGE
-  - echo $TRAVIS_JOB_ID
   - mono ./packages/NUnit.Console.3.0.1/tools/nunit3-console.exe ./Gerencianet.Tests/bin/Release/Gerencianet.Tests.dll
-  - mono ./packages/coveralls.net.0.6.0/tools/csmacnz.Coveralls.exe --monocov -i ./monocovCoverage --repoTokenVariable COVERALLS_REPO_TOKEN --jobId $TRAVIS_JOB_ID  --serviceName travis-ci  --useRelativePaths

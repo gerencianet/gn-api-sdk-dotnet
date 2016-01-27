@@ -4,7 +4,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-namespace Gerencianet.Tests
+namespace Gerencianet.SDK.Tests
 {
     [TestFixture]
     class HttpHelperTest

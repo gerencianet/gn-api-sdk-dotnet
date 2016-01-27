@@ -7,8 +7,9 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using static System.Net.WebRequestMethods;
 
-namespace Gerencianet
+namespace Gerencianet.SDK
 {
     public class HttpHelper
     {
@@ -48,7 +49,7 @@ namespace Gerencianet
                         endpoint = Regex.Replace(endpoint, string.Format(":{0}", resource), value);
                         queryDict.Remove(resource);
                     }
-                    catch (NullReferenceException)
+                    catch (Exception)
                     {}
                 }
 

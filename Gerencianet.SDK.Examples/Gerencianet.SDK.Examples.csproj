@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FA1AF4A-4382-48C1-98F0-BD220E94480A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gerencianet.SDK.Examples</RootNamespace>
+    <AssemblyName>Gerencianet.SDK.Examples</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllInOne.cs" />
+    <Compile Include="CancelCharge.cs" />
+    <Compile Include="CancelSubscription.cs" />
+    <Compile Include="CreateSubscriptionPayment.cs" />
+    <Compile Include="CreateBilletPayment.cs" />
+    <Compile Include="CreateCardPayment.cs" />
+    <Compile Include="CreateCarnet.cs" />
+    <Compile Include="CreateCarnetHistory.cs" />
+    <Compile Include="CreateChargeHistory.cs" />
+    <Compile Include="CreatePlan.cs" />
+    <Compile Include="CreateSubscription.cs" />
+    <Compile Include="DeletePlan.cs" />
+    <Compile Include="DetailCarnet.cs" />
+    <Compile Include="DetailCharge.cs" />
+    <Compile Include="DetailSubscription.cs" />
+    <Compile Include="GetInstallments.cs" />
+    <Compile Include="GetNotification.cs" />
+    <Compile Include="GetPlans.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="CreateCharge.cs" />
+    <Compile Include="Credentials.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Credentials.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResendBillet.cs" />
+    <Compile Include="ResendCarnet.cs" />
+    <Compile Include="ResendParcel.cs" />
+    <Compile Include="UpdateBillet.cs" />
+    <Compile Include="UpdateCarnetMetadata.cs" />
+    <Compile Include="UpdateChargeMetadata.cs" />
+    <Compile Include="UpdateParcel.cs" />
+    <Compile Include="UpdateSubscriptionMetadata.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Credentials.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Credentials.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gerencianet.SDK\Gerencianet.SDK.csproj">
+      <Project>{e4d26948-353c-4a54-bc5b-b70413ee4206}</Project>
+      <Name>Gerencianet.SDK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,102 +1,102 @@
 ﻿{
   "CreateCharge": {
     "route": "/charge",
-    "method": "post"
+    "method": "POST"
   },
   "DetailCharge": {
     "route": "/charge/:id",
-    "method": "get"
+    "method": "GET"
   },
   "UpdateChargeMetadata": {
     "route": "/charge/:id/metadata",
-    "method": "put"
+    "method": "PUT"
   },
   "UpdateBillet": {
     "route": "/charge/:id/billet",
-    "method": "put"
+    "method": "PUT"
   },
   "PayCharge": {
     "route": "/charge/:id/pay",
-    "method": "post"
+    "method": "POST"
   },
   "CancelCharge": {
     "route": "/charge/:id/cancel",
-    "method": "put"
+    "method": "PUT"
   },
   "CreateCarnet": {
     "route": "/carnet",
-    "method": "post"
+    "method": "POST"
   },
   "DetailCarnet": {
     "route": "/carnet/:id",
-    "method": "get"
+    "method": "GET"
   },
   "UpdateParcel": {
     "route": "/carnet/:id/parcel/:parcel",
-    "method": "put"
+    "method": "PUT"
   },
   "UpdateCarnetMetadata": {
     "route": "/carnet/:id/metadata",
-    "method": "put"
+    "method": "PUT"
   },
-  "GetNotification": {
+  "GETNotification": {
     "route": "/notification/:token",
-    "method": "get"
+    "method": "GET"
   },
-  "GetPlans": {
+  "GETPlans": {
     "route": "/plans",
-    "method": "get"
+    "method": "GET"
   },
   "CreatePlan": {
     "route": "/plan",
-    "method": "post"
+    "method": "POST"
   },
   "DeletePlan": {
     "route": "/plan/:id",
-    "method": "del"
+    "method": "DELETE"
   },
   "CreateSubscription": {
     "route": "/plan/:id/subscription",
-    "method": "post"
+    "method": "POST"
   },
   "DetailSubscription": {
     "route": "/subscription/:id",
-    "method": "get"
+    "method": "GET"
   },
   "PaySubscription": {
     "route": "/subscription/:id/pay",
-    "method": "post"
+    "method": "POST"
   },
   "CancelSubscription": {
     "route": "/subscription/:id/cancel",
-    "method": "put"
+    "method": "PUT"
   },
   "UpdateSubscriptionMetadata": {
     "route": "/subscription/:id/metadata",
-    "method": "put"
+    "method": "PUT"
   },
-  "GetInstallments": {
+  "GETInstallments": {
     "route": "/installments",
-    "method": "get"
+    "method": "GET"
   },
   "ResendBillet": {
     "route": "/charge/:id/billet/resend",
-    "method": "post"
+    "method": "POST"
   },
   "CreateChargeHistory": {
     "route": "/charge/:id/history",
-    "method": "post"
+    "method": "POST"
   },
   "ResendCarnet": {
     "route": "/carnet/:id/resend",
-    "method": "post"
+    "method": "POST"
   },
   "ResendParcel": {
     "route": "/carnet/:id/parcel/:parcel/resend",
-    "method": "post"
+    "method": "POST"
   },
   "CreateCarnetHistory": {
     "route": "/carnet/:id/history",
-    "method": "post"
+    "method": "POST"
   }
 }

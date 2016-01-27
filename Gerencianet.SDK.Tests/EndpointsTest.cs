@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 
-namespace Gerencianet.Tests
+namespace Gerencianet.SDK.Tests
 {
     [TestFixture]
     public class EndpointsTest

@@ -10,9 +10,10 @@
     <description>.NET sdk for Gerencianet API.</description>
     <dependencies>
       <dependency id="Newtonsoft.Json" version="5.0.1" />
+      <dependency id="Microsoft.CSharp" version="4.0.0" />
     </dependencies>
   </metadata>
   <files>
-    <file src="Gerencianet\bin\Release\Gerencianet.SDK.dll" target="lib\net45" />
+    <file src="Gerencianet.SDK\bin\Release\Gerencianet.SDK.dll" target="lib\net45" />
   </files>
 </package>
