@@ -5,3 +5,4 @@
 # 1.0.1
 
 - Fix api base url
+- Fix endpoints names

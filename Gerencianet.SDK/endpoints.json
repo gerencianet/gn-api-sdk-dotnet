@@ -39,11 +39,11 @@
     "route": "/carnet/:id/metadata",
     "method": "PUT"
   },
-  "GETNotification": {
+  "GetNotification": {
     "route": "/notification/:token",
     "method": "GET"
   },
-  "GETPlans": {
+  "GetPlans": {
     "route": "/plans",
     "method": "GET"
   },
@@ -75,7 +75,7 @@
     "route": "/subscription/:id/metadata",
     "method": "PUT"
   },
-  "GETInstallments": {
+  "GetInstallments": {
     "route": "/installments",
     "method": "GET"
   },
