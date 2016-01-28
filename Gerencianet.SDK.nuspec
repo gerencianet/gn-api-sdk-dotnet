@@ -2,12 +2,12 @@
 <package >
   <metadata>
     <id>Gerencianet.SDK</id>
-    <version>0.0.1</version>
+    <version>1.0.0</version>
     <authors>Cecília Devêza, Danniel Hugo, Francisco Thiene, Talita Campos, Thomaz Feitoza</authors>
     <projectUrl>https://github.com/gerencianet/gn-api-sdk-dotnet</projectUrl>
     <iconUrl>https://avatars2.githubusercontent.com/u/7284118</iconUrl>
     <licenseUrl>https://github.com/gerencianet/gn-api-sdk-dotnet/blob/master/LICENSE</licenseUrl>
-    <description>.NET sdk for Gerencianet API.</description>
+    <description>A .NET library for integration of your application with the payment services provided by Gerencianet.</description>
     <dependencies>
       <dependency id="Newtonsoft.Json" version="5.0.1" />
       <dependency id="Microsoft.CSharp" version="4.0.0" />
