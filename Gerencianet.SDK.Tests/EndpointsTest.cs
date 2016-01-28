@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using System;
 
 namespace Gerencianet.SDK.Tests
 {
@@ -37,12 +36,6 @@ namespace Gerencianet.SDK.Tests
                 Assert.IsTrue(e.ErrorType.Equals("invalid_endpoint"), "Endpoints instance should not have a method named 'Charge'");
             }
         }
-
-        [Test]
-        public void AuthenticateTest()
-        {
-            
-        }
-
+        
     }
 }

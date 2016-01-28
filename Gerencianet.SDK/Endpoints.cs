@@ -91,7 +91,7 @@ namespace Gerencianet.SDK
                 dynamic response = this.httpHelper.SendRequest(request, body);
                 this.token = response.access_token;
             }
-            catch (WebException e)
+            catch (WebException)
             {
                 throw GnException.Build("", 401);
             }

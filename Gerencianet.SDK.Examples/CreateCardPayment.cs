@@ -7,9 +7,7 @@ namespace Gerencianet.SDK.Examples
         public static void Execute()
         {
             dynamic endpoints = new Endpoints(Credentials.Default.ClientId, Credentials.Default.ClientSecret, true);
-
-            var tomorrow = DateTime.Now.AddDays(1);
-
+            
             var param = new
             {
                 id = 1000
