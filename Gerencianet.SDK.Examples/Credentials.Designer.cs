@@ -46,5 +46,17 @@ namespace Gerencianet.SDK.Examples {
                 this["ClientSecret"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Sandbox {
+            get {
+                return ((bool)(this["Sandbox"]));
+            }
+            set {
+                this["Sandbox"] = value;
+            }
+        }
     }
 }

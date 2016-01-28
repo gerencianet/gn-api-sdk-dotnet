@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gerencianet.SDK.Examples
 {
@@ -10,7 +6,7 @@ namespace Gerencianet.SDK.Examples
     {
         public static void Execute()
         {
-            dynamic endpoints = new Endpoints(Credentials.Default.ClientId, Credentials.Default.ClientSecret, true);
+            dynamic endpoints = new Endpoints(Credentials.Default.ClientId, Credentials.Default.ClientSecret, Credentials.Default.Sandbox);
 
             var param = new
             {
