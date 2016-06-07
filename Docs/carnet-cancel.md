@@ -11,7 +11,7 @@ var param = new
     id = 1000
 };
 
-var response = endpoints.CancelCarnet(param, body);
+var response = endpoints.CancelCarnet(param);
 Console.WriteLine(response);
 ```
 

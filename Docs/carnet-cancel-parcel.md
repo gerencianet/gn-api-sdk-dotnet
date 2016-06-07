@@ -12,7 +12,7 @@ var param = new
     parcel = 1
 };
 
-var response = endpoints.CancelParcel(param, body);
+var response = endpoints.CancelParcel(param);
 Console.WriteLine(response);
 ```
 
