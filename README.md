@@ -78,6 +78,8 @@ $ nunit3-console ./Gerencianet.SDK.Tests/bin/Release/Gerencianet.SDK.Tests.dll
 - [Resending the carnet](/Docs/carnet-resend.md)
 - [Resending carnet parcel](/Docs/carnet-resend-parcel.md)
 - [Adding information to carnet's history](/Docs/carnet-create-history.md)
+- [Canceling the carnet](/Docs/carnet-cancel.md)
+- [Canceling carnet parcel](/Docs/carnet-cancel-parcel.md)
 
 ### Subscriptions
 
