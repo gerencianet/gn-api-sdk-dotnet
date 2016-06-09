@@ -1,6 +1,6 @@
 ### Canceling the carnet
 
-You can cancel `active` carnet:
+Only `active` carnets can be canceled:
 
 ```c#
 using Gerencianet.SDK;
