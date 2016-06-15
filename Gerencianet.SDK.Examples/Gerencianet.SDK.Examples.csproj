@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllInOne.cs" />
+    <Compile Include="CancelCarnet.cs" />
     <Compile Include="CancelCharge.cs" />
+    <Compile Include="CancelParcel.cs" />
     <Compile Include="CancelSubscription.cs" />
     <Compile Include="CreateSubscriptionPayment.cs" />
     <Compile Include="CreateBilletPayment.cs" />
