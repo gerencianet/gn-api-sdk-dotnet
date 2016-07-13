@@ -5,8 +5,8 @@ provided by [Gerencianet](http://gerencianet.com.br).
 
 [![Build Status](https://travis-ci.org/gerencianet/gn-api-sdk-dotnet.svg)](https://travis-ci.org/gerencianet/gn-api-sdk-dotnet)
 
-:warning: **Gerencianet API is under BETA version, meaning that it's not available for all users right now. If you're interested, you can always send an email to
-desenvolvedores@gerencianet.com.br and we'll enable it for your account**
+**Em caso de dúvidas, você pode verificar a [Documentação](https://docs.gerencianet.com.br) da API na Gerencianet e, necessitando de mais detalhes ou informações, entre em contato com nossa consultoria técnica, via nossos [Canais de Comunicação](https://gerencianet.com.br/central-de-ajuda).**
+
 
 ## Installation
 
