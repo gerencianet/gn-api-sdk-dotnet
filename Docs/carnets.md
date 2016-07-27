@@ -112,7 +112,7 @@ var body = new {
     },
     repeats = 4,
     expire_at = "2020-12-12",
-    message = "The delivery time is counted in working days, in other words not inlclude statusurdays, Sundays and holidays"
+    message = "The delivery time is counted in working days, in other words not inlclude Saturdays, Sundays and holidays"
 }
 ```
 
