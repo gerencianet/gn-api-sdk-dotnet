@@ -1,3 +1,8 @@
+# 1.0.3
+
+- Added: new endpoint (link charge)
+- Updated: docs
+
 # 1.0.2
 
 - Added: new endpoint (cancel carnet)
