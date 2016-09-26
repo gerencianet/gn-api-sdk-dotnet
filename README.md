@@ -5,9 +5,6 @@ provided by [Gerencianet](http://gerencianet.com.br).
 
 [![Build Status](https://travis-ci.org/gerencianet/gn-api-sdk-dotnet.svg)](https://travis-ci.org/gerencianet/gn-api-sdk-dotnet)
 
-**Em caso de dúvidas, você pode verificar a [Documentação](https://dev.gerencianet.com.br) da API na Gerencianet e, necessitando de mais detalhes ou informações, entre em contato com nossa consultoria técnica, via nossos [Canais de Comunicação](https://gerencianet.com.br/central-de-ajuda).**
-
-
 ## Installation
 
 From Visual Studio package manager: Search for ```Gerencianet.SDK```
