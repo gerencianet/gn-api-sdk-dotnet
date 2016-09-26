@@ -106,5 +106,9 @@
   "CancelParcel": {
     "route": "/carnet/:id/parcel/:parcel/cancel",
     "method": "PUT"
+  },
+  "LinkCharge": {
+    "route": "/charge/:id/link",
+    "method": "POST"
   }
 }
