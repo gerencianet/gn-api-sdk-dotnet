@@ -12,13 +12,19 @@ namespace Gerencianet.SDK
     {
         private const string ApiBaseURL = "https://api.gerencianet.com.br/v1";
         private const string ApiBaseSandboxURL = "https://sandbox.gerencianet.com.br/v1";
-        private const string Version = "1.0.3";
+        private const string Version = "1.0.4";
 
         private JObject endpoints;
         private string clientId;
         private string clientSecret;
         private string token;
         private HttpHelper httpHelper;
+        private string partnerToken;
+
+        public string PartnerToken {
+            get { return partnerToken; }
+            set { partnerToken = value; }
+        }
 
         public Endpoints(string clientId, string clientSecret, bool sandbox)
         {
@@ -29,8 +35,9 @@ namespace Gerencianet.SDK
             this.httpHelper = new HttpHelper();
             this.httpHelper.BaseUrl = sandbox ? Endpoints.ApiBaseSandboxURL : Endpoints.ApiBaseURL;
             this.token = null;
+            this.partnerToken = null;
         }
-
+        
         public override bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result)
         { 
             JObject endpoint = null;
@@ -102,6 +109,10 @@ namespace Gerencianet.SDK
             WebRequest request = this.httpHelper.GetWebRequest(endpoint, method, query);
             request.Headers.Add("Authorization", string.Format("Bearer {0}", this.token));
             request.Headers.Add("api-sdk", string.Format("dotnet-{0}", Version));
+            if (partnerToken != null)
+            {
+                request.Headers.Add("partner-token", this.partnerToken);
+            }
 
             try
             {

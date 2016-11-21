@@ -7,7 +7,6 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using static System.Net.WebRequestMethods;
 
 namespace Gerencianet.SDK
 {
@@ -17,14 +16,8 @@ namespace Gerencianet.SDK
 
         public string BaseUrl
         {
-            get
-            {
-                return this.baseUrl;
-            }
-            set
-            {
-                this.baseUrl = value;
-            }
+            get { return baseUrl; }
+            set { baseUrl = value; }
         }
 
         public WebRequest GetWebRequest(string endpoint, string method, object query)

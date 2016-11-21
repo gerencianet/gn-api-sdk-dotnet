@@ -1,3 +1,7 @@
+# 1.0.4
+
+- Added: forward `partner-token` header
+
 # 1.0.3
 
 - Added: new endpoint (link charge)

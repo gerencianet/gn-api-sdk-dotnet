@@ -12,6 +12,7 @@ namespace Gerencianet.SDK.Tests
         public void Init()
         {
             this.gerencianet = new Endpoints("", "", true);
+            this.gerencianet.PartnerToken = "my_partner_token";
         }
 
         [Test]
