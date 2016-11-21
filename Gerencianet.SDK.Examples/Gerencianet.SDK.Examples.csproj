@@ -62,6 +62,7 @@
     <Compile Include="GetInstallments.cs" />
     <Compile Include="GetNotification.cs" />
     <Compile Include="GetPlans.cs" />
+    <Compile Include="LinkCharge.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="CreateCharge.cs" />
     <Compile Include="Credentials.Designer.cs">

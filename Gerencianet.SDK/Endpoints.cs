@@ -12,7 +12,7 @@ namespace Gerencianet.SDK
     {
         private const string ApiBaseURL = "https://api.gerencianet.com.br/v1";
         private const string ApiBaseSandboxURL = "https://sandbox.gerencianet.com.br/v1";
-        private const string Version = "1.0.1";
+        private const string Version = "1.0.3";
 
         private JObject endpoints;
         private string clientId;
