@@ -14,7 +14,10 @@ From command-line with NuGet:
 ```bash
 $ nuget install Gerencianet.SDK
 ```
-
+### Tested with
+```
+dotnet 4.0.0
+```
 ## Basic usage
 
 ```c#
