@@ -1,0 +1,38 @@
+﻿using System;
+
+namespace Gerencianet.SDK.Examples
+{
+    class UpdateChargeLink
+    {
+        public static void Execute()
+        {
+            dynamic endpoints = new Endpoints(Credentials.Default.ClientId, Credentials.Default.ClientSecret, Credentials.Default.Sandbox);
+
+            var param = new
+            {
+                id = 1000
+            };
+
+            var body = new
+            {
+                billet_discount = 0,
+                card_discount = 0,
+                message = "",
+                expire_at = DateTime.Now.AddDays(3).ToString("yyyy-MM-dd"),
+                request_delivery_address = false,
+                payment_method = "all"
+            };
+
+            try
+            {
+                var response = endpoints.UpdateChargeLink(param, body);
+                Console.WriteLine(response);
+            }
+            catch (GnException e)
+            {
+                Console.WriteLine(e.ErrorType);
+                Console.WriteLine(e.Message);
+            }
+        }
+    }
+}

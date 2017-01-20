@@ -2,7 +2,7 @@
 
 namespace Gerencianet.SDK.Examples
 {
-    class LinkCharge
+    class ChargeLink
     {
         public static void Execute()
         {
@@ -25,7 +25,7 @@ namespace Gerencianet.SDK.Examples
 
             try
             {
-                var response = endpoints.LinkCharge(param, body);
+                var response = endpoints.ChargeLink(param, body);
                 Console.WriteLine(response);
             }
             catch (GnException e)

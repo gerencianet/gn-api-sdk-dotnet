@@ -110,5 +110,13 @@
   "LinkCharge": {
     "route": "/charge/:id/link",
     "method": "POST"
+  },
+  "ChargeLink": {
+    "route": "/charge/:id/link",
+    "method": "POST"
+  },
+  "UpdateChargeLink": {
+    "route": "/charge/:id/link",
+    "method": "PUT"
   }
 }
