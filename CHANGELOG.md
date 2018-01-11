@@ -1,3 +1,8 @@
+# 1.0.6
+
+- Added: new endpoint (update plan)
+- Added: new endpoint (create subscription history)
+
 # 1.0.5
 
 - Added: new endpoint (update charge link)

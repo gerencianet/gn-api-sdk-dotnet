@@ -2,8 +2,8 @@
 <package >
   <metadata>
     <id>Gerencianet.SDK</id>
-    <version>1.0.4</version>
-    <authors>Cecília Devêza, Danniel Hugo, Francisco Thiene, Talita Campos, Thomaz Feitoza</authors>
+    <version>1.0.6</version>
+    <authors>Cecília Devêza, Danniel Hugo, Francisco Thiene, Talita Campos, Thomaz Feitoza, Filipe Mata</authors>
     <projectUrl>https://github.com/gerencianet/gn-api-sdk-dotnet</projectUrl>
     <iconUrl>https://avatars2.githubusercontent.com/u/7284118</iconUrl>
     <licenseUrl>https://github.com/gerencianet/gn-api-sdk-dotnet/blob/master/LICENSE</licenseUrl>

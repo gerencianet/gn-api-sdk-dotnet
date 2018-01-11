@@ -118,5 +118,13 @@
   "UpdateChargeLink": {
     "route": "/charge/:id/link",
     "method": "PUT"
+  },
+  "UpdatePlan": {
+    "route": "/plan/:id",
+    "method": "PUT"
+  },
+  "CreateSubscriptionHistory": {
+    "route": "/subscription/:id/history",
+    "method": "POST"
   }
 }
