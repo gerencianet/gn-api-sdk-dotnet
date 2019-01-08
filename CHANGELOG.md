@@ -1,3 +1,8 @@
+# 1.0.7
+
+- Added: new endpoint (SettleCarnetParcel)
+- Added: new endpoint (SettleCharge)
+
 # 1.0.6
 
 - Added: new endpoint (update plan)

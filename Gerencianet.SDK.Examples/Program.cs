@@ -12,6 +12,7 @@
             //UpdateBillet.Execute();
             //UpdateCarnetMetadata.Execute();
             //CancelCharge.Execute();
+            //SettleCharge.Execute();
 
             //CreateBilletPayment.Execute();
             //CreateCardPayment.Execute();
@@ -32,6 +33,8 @@
             //DetailCarnet.Execute();
             //ResendCarnet.Execute();
             //ResendParcel.Execute();
+            //SettleCarnetParcel.Execute();
+
             //UpdateCarnetMetadata.Execute();
             //UpdateParcel.Execute();
 

@@ -126,5 +126,13 @@
   "CreateSubscriptionHistory": {
     "route": "/subscription/:id/history",
     "method": "POST"
-  }
+  },
+  "SettleCharge": {
+    "route": "/charge/:id/settle",
+    "method": "PUT"
+  },
+  "SettleCarnetParcel": {
+    "route": "/carnet/:id/parcel/:parcel/settle",
+    "method": "PUT"
+ }
 }
