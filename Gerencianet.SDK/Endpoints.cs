@@ -87,6 +87,7 @@ namespace Gerencianet.SDK
             {
                 grant_type = "client_credentials"
             };
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             WebRequest request = this.httpHelper.GetWebRequest("/authorize", "post", null);
             string credentials = string.Format("{0}:{1}", this.clientId, this.clientSecret);
             string encodedAuth = Convert.ToBase64String(Encoding.GetEncoding("UTF-8").GetBytes(credentials));
@@ -106,6 +107,7 @@ namespace Gerencianet.SDK
 
         private object RequestEndpoint(string endpoint, string method, object query, object body)
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             WebRequest request = this.httpHelper.GetWebRequest(endpoint, method, query);
             request.Headers.Add("Authorization", string.Format("Bearer {0}", this.token));
             request.Headers.Add("api-sdk", string.Format("dotnet-{0}", Version));
