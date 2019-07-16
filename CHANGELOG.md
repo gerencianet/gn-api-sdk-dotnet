@@ -1,3 +1,7 @@
+# 1.0.8
+
+- Added: TLS 1.2 support
+
 # 1.0.7
 
 - Added: new endpoint (SettleCarnetParcel)
