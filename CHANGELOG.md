@@ -1,3 +1,8 @@
+# 1.0.9
+
+- Added: new endpoint (OneStep)
+- Updated: docs
+
 # 1.0.8
 
 - Added: TLS 1.2 support

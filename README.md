@@ -7,13 +7,18 @@ provided by [Gerencianet](http://gerencianet.com.br).
 
 ## Installation
 
-From Visual Studio package manager: Search for ```Gerencianet.SDK```
-
-From command-line with NuGet:
+From Visual Studio package manager: 
 
 ```bash
-$ nuget install Gerencianet.SDK
+PM> Install-Package Gerencianet.SDK -Version 1.0.8
 ```
+
+From .NET Cli:
+
+```bash
+> dotnet add package Gerencianet.SDK --version 1.0.8
+```
+
 ### Tested with
 ```
 dotnet 4.0.0
