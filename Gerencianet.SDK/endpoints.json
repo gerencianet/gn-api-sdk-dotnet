@@ -134,5 +134,9 @@
   "SettleCarnetParcel": {
     "route": "/carnet/:id/parcel/:parcel/settle",
     "method": "PUT"
- }
+ },
+  "OneStep": {
+    "route": "/charge/one-step",
+    "method": "POST"
+  }
 }

@@ -76,6 +76,8 @@
     <Compile Include="ResendParcel.cs" />
     <Compile Include="UpdateBillet.cs" />
     <Compile Include="UpdateCarnetMetadata.cs" />
+    <Compile Include="OneStepBankingBillet.cs" />
+    <Compile Include="OneStepCreditCard.cs" />
     <Compile Include="UpdateChargeMetadata.cs" />
     <Compile Include="UpdateParcel.cs" />
     <Compile Include="UpdateSubscriptionMetadata.cs" />
